@@ -1,0 +1,14 @@
+langchain
+langchain-core
+langchain-community
+langchain-openai
+langchain-text-splitters
+chromadb
+langchain-chroma
+fastapi
+uvicorn
+python-dotenv
+tiktoken
+pydantic
+requests
+streamlit
