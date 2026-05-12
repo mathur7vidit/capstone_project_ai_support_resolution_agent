@@ -1,6 +1,6 @@
 # AI Support Resolution Agent
 
-Production-ready setup for a FastAPI backend and Streamlit frontend, packaged as separate Docker images and served through an Nginx reverse proxy.
+Production-ready setup for a FastAPI backend and Streamlit frontend. The recommended run path uses separate Docker images, Docker Compose, and an Nginx reverse proxy. An optional local Windows run path is also available through scripts.
 
 ## Architecture
 
@@ -13,6 +13,8 @@ Production-ready setup for a FastAPI backend and Streamlit frontend, packaged as
 
 ## Prerequisites
 
+### Docker Mode
+
 - Docker Desktop installed and running.
 - Docker Compose v2 available through `docker compose`.
 - A `.env` file in the project root with API credentials:
@@ -24,7 +26,22 @@ OPENAI_API_BASE=https://your-openai-compatible-endpoint/v1
 
 Do not commit real secrets to source control.
 
-## Build Docker Images
+### Local Script Mode
+
+- Python installed locally.
+- A virtual environment named `venv` in the project root.
+- Dependencies installed from `requirements.txt`.
+- A `.env` file in the project root with the same API credentials shown above.
+
+Create and prepare the local virtual environment:
+
+```powershell
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+## Option 1: Run With Docker Compose
 
 From the project root:
 
@@ -38,8 +55,6 @@ This builds two application images:
 - Frontend image from `ui/Dockerfile` using `ui/requirements.txt`
 
 Nginx uses the official `nginx:1.27-alpine` image.
-
-## Run In Production Mode
 
 Start all services:
 
@@ -80,6 +95,54 @@ Check only the backend logs:
 docker compose logs -f backend
 ```
 
+Stop Docker services:
+
+```powershell
+docker compose down
+```
+
+Rebuild after code changes:
+
+```powershell
+docker compose up -d --build
+```
+
+## Option 2: Run Locally With Windows Scripts
+
+Use this mode when Docker is not required and you want to run the backend and frontend directly on Windows.
+
+Start both services:
+
+```powershell
+.\scripts\start_service.bat
+```
+
+This script:
+
+- Activates `venv`
+- Starts FastAPI with Uvicorn
+- Starts the Streamlit frontend
+
+Open the app:
+
+```text
+http://localhost:8501/
+```
+
+Backend health check:
+
+```text
+http://localhost:8000/health
+```
+
+Stop both local services:
+
+```powershell
+.\scripts\stop_service.bat
+```
+
+Local script mode is useful for development, but Docker Compose is recommended for production-style evaluation because it includes separated services, reverse proxy routing, container health checks, and restart policies.
+
 ## Health Checks
 
 The production setup includes health checks at three layers:
@@ -100,18 +163,6 @@ Docker Compose waits for backend and frontend health before starting the reverse
 - Containers use `restart: unless-stopped`.
 - Backend and frontend define `stop_grace_period` so Docker has time to shut them down cleanly.
 
-## Stop Services
-
-```powershell
-docker compose down
-```
-
-## Rebuild After Code Changes
-
-```powershell
-docker compose up -d --build
-```
-
 ## Direct Image Build Commands
 
 If you want to build images without Compose:
@@ -131,5 +182,7 @@ Running manually is possible, but Compose is recommended because it wires servic
 - `ui/Dockerfile`: frontend image definition.
 - `ui/requirements.txt`: frontend-only Python dependencies.
 - `nginx/nginx.conf`: reverse proxy routing.
+- `scripts/start_service.bat`: optional local Windows startup script.
+- `scripts/stop_service.bat`: optional local Windows stop script.
 - `.dockerignore`: excludes local virtualenvs, logs, caches, and secrets from build context.
 - `.env`: runtime API credentials loaded into the backend container.

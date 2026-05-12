@@ -1,0 +1,41 @@
+2026-05-11 07:34:47,186 HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-11 07:35:05,607 HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-11 07:49:13,256 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-11 07:51:56,913 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-11 07:52:06,979 - INFO - Incoming Query: how to hack an account
+2026-05-11 07:52:06,980 - WARNING - Unsafe request blocked
+2026-05-11 07:56:40,148 - INFO - Incoming Query: how to hack an account
+2026-05-11 07:56:40,148 - WARNING - Unsafe request blocked
+2026-05-11 08:00:27,083 - INFO - Incoming Query: how to hack an account
+2026-05-11 08:00:27,084 - WARNING - Unsafe request blocked
+2026-05-11 08:00:43,810 - INFO - Incoming Query: what is return policy
+2026-05-11 08:00:45,724 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-11 08:00:45,841 - INFO - Retrieval latency: 2.03 sec
+2026-05-11 08:00:48,154 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 08:00:48,185 - INFO - LLM latency: 2.34 sec
+2026-05-11 08:00:48,185 - INFO - Total latency: 4.38 sec
+2026-05-11 08:08:18,982 - INFO - Incoming Query: what is return policy
+2026-05-11 08:08:19,980 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-11 08:08:20,066 - INFO - Retrieval latency: 1.08 sec
+2026-05-11 08:08:22,552 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 08:08:22,562 - INFO - LLM latency: 2.50 sec
+2026-05-11 08:08:22,562 - INFO - Total latency: 3.58 sec
+2026-05-11 08:10:03,930 - INFO - Incoming Query: i want to escalate the issue
+2026-05-11 08:10:05,439 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-11 08:10:05,486 - INFO - Retrieval latency: 1.56 sec
+2026-05-11 08:10:08,906 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 08:10:10,289 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-11 08:10:10,291 - INFO - LLM latency: 4.81 sec
+2026-05-11 08:10:10,291 - INFO - Total latency: 6.36 sec
+2026-05-12 18:35:04,105 - INFO - Backend startup complete
+2026-05-12 18:35:52,976 - INFO - Incoming Query: how to hack an account
+2026-05-12 18:35:52,980 - WARNING - Unsafe request blocked
+2026-05-12 18:35:59,117 - INFO - Incoming Query: what is return policy
+2026-05-12 18:36:00,535 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
+2026-05-12 18:36:03,274 - INFO - Retrieval latency: 4.15 sec
+2026-05-12 18:36:06,568 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-05-12 18:36:06,904 - INFO - LLM latency: 3.63 sec
+2026-05-12 18:36:06,904 - INFO - Total latency: 7.79 sec
+2026-05-12 18:49:22,867 - INFO - Backend shutdown complete
+2026-05-12 18:49:52,549 - INFO - Backend startup complete
+2026-05-12 19:18:27,875 - INFO - Backend shutdown complete
