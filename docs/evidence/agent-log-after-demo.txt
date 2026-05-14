@@ -1,9 +1,4 @@
-2026-05-11 07:34:47,186 HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
-2026-05-11 07:35:05,607 HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
-2026-05-11 07:49:13,256 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
-2026-05-11 07:51:56,913 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings "HTTP/1.1 200 OK"
-2026-05-11 07:52:06,979 - INFO - Incoming Query: how to hack an account
-2026-05-11 07:52:06,980 - WARNING - Unsafe request blocked
+﻿2026-05-11 07:52:06,980 - WARNING - Unsafe request blocked
 2026-05-11 07:56:40,148 - INFO - Incoming Query: how to hack an account
 2026-05-11 07:56:40,148 - WARNING - Unsafe request blocked
 2026-05-11 08:00:27,083 - INFO - Incoming Query: how to hack an account
@@ -63,5 +58,3 @@
 2026-05-14 19:23:44,457 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions "HTTP/1.1 200 OK"
 2026-05-14 19:23:44,460 - INFO - LLM latency: 2.17 sec
 2026-05-14 19:23:44,460 - INFO - Total latency: 5.63 sec
-2026-05-14 19:36:23,756 - INFO - Incoming Query: how to hack an account
-2026-05-14 19:36:23,833 - WARNING - Unsafe request blocked

@@ -190,5 +190,8 @@ Running manually is possible, but Compose is recommended because it wires servic
 - `docs/03_PROMPT_COMPARISON.md`: prompt comparison table using the same test set.
 - `docs/04_EVALUATION_REPORT.md`: evaluation report with debugged failure cases.
 - `docs/05_ENGINEERING_PRODUCT_JUSTIFICATION.md`: engineering and product justification.
+- `docs/DOCKER_RUN_PROOF.md`: index of Docker run evidence and screenshots.
+- `docs/screenshots/`: captured proof screenshots.
+- `docs/evidence/`: captured proof logs, API results, and health output.
 - `.dockerignore`: excludes local virtualenvs, logs, caches, and secrets from build context.
 - `.env`: runtime API credentials loaded into the backend container.

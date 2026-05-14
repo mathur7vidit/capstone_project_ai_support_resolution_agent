@@ -119,13 +119,15 @@ Incoming Query: My number is **********. Can I cancel?
 
 | Evidence | Status |
 | --- | --- |
-| Frontend loaded at `http://localhost/` | Capture during demo |
-| Refund retrieval answer | Capture during demo |
-| Ticket status tool response | Capture during demo |
-| Sensitive escalation response | Capture during demo |
-| Unsafe request refusal | Capture during demo |
-| Docker services healthy | Capture terminal output |
-| PII-masked log line | Capture terminal output |
+| Frontend loaded at `http://localhost/` | Captured in `docs/screenshots/01_app_home.png` |
+| Backend health through reverse proxy | Captured in `docs/screenshots/02_backend_health.png` |
+| Backend readiness through reverse proxy | Captured in `docs/screenshots/03_backend_ready.png` |
+| Refund retrieval answer | Captured in `docs/evidence/demo-api-results.json` and `docs/screenshots/04_evidence_dashboard.png` |
+| Ticket status tool response | Captured in `docs/evidence/demo-api-results.json` and `docs/screenshots/04_evidence_dashboard.png` |
+| Sensitive escalation response | Captured in `docs/evidence/demo-api-results.json` and `docs/evidence/agent-log-after-demo.txt` |
+| Unsafe request refusal | Captured in `docs/evidence/demo-api-results.json` and `docs/evidence/agent-log-after-demo.txt` |
+| Docker services healthy | Captured in `docs/evidence/docker-compose-ps.txt` and `docs/screenshots/04_evidence_dashboard.png` |
+| PII-masked log line | Captured in `docs/evidence/agent-log-after-demo.txt` and `docs/screenshots/04_evidence_dashboard.png` |
 
 ## Demo Narration
 
@@ -136,4 +138,3 @@ Incoming Query: My number is **********. Can I cancel?
 5. Run the legal/payment dispute prompt and show escalation.
 6. Run the bypass prompt and show refusal.
 7. Run the PII prompt and show masked log evidence.
-

@@ -1,0 +1,4 @@
+﻿NAME                               IMAGE                       COMMAND                  SERVICE         CREATED         STATUS                        PORTS
+capstone_project-backend-1         capstone_project-backend    "uvicorn app.main:ap…"   backend         2 minutes ago   Up About a minute (healthy)   8000/tcp
+capstone_project-frontend-1        capstone_project-frontend   "streamlit run ui/st…"   frontend        2 minutes ago   Up About a minute (healthy)   8501/tcp
+capstone_project-reverse-proxy-1   nginx:1.27-alpine           "/docker-entrypoint.…"   reverse-proxy   2 minutes ago   Up 50 seconds (healthy)       0.0.0.0:80->80/tcp

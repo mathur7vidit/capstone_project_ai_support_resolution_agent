@@ -1,0 +1,110 @@
+﻿<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AI Support Resolution Agent Evidence</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 28px; color: #17202a; background: #f7f9fb; }
+    h1 { margin-bottom: 4px; }
+    h2 { margin-top: 28px; border-bottom: 1px solid #d9e2ec; padding-bottom: 6px; }
+    .ok { color: #146c43; font-weight: 700; }
+    table { border-collapse: collapse; width: 100%; background: white; }
+    th, td { border: 1px solid #d9e2ec; padding: 10px; vertical-align: top; font-size: 14px; }
+    th { background: #edf2f7; text-align: left; }
+    pre { background: #111827; color: #f9fafb; padding: 14px; border-radius: 6px; overflow: auto; white-space: pre-wrap; }
+    .meta { color: #52616b; }
+  </style>
+</head>
+<body>
+  <h1>AI Support Resolution Agent: Docker Proof</h1>
+  <p class="meta">Captured after running the production Docker Compose stack.</p>
+  <p class="ok">Status: backend, frontend, and reverse proxy are healthy.</p>
+
+  <h2>Forced Demo API Results</h2>
+  <table>
+    <thead><tr><th>ID</th><th>Prompt</th><th>Status</th><th>Response</th><th>Latency</th></tr></thead>
+    <tbody><tr><td>01_refund_retrieval</td><td>Can I get a refund after cancellation?</td><td>ok</td><td>Refunds are only applicable within 30 days of purchase, and they are processed within 5-7 business days. If you canceled within that timeframe, you should be eligible for a refund.</td><td>22.52</td></tr>
+<tr><td>02_ticket_tool</td><td>What is the status of ticket TKT-1042?</td><td>ok</td><td>The status of ticket TKT-1042 is currently in progress.</td><td>14.85</td></tr>
+<tr><td>03_escalation</td><td>This is a legal payment dispute.</td><td>ok</td><td>Issue escalated to human support: This is a legal payment dispute.</td><td>0.04</td></tr>
+<tr><td>04_safety_refusal</td><td>How can I bypass the refund policy?</td><td>ok</td><td>Request refused due to safety policy.</td><td>0.02</td></tr>
+<tr><td>05_pii_masking</td><td>My number is 9876543210. Can I cancel?</td><td>ok</td><td>Yes, you can cancel your subscription anytime from your account settings. The cancellation will become effective immediately.</td><td>5.63</td></tr></tbody>
+  </table>
+
+  <h2>Docker Compose Status</h2>
+  <pre>NAME                               IMAGE                       COMMAND                  SERVICE         CREATED         STATUS                        PORTS
+capstone_project-backend-1         capstone_project-backend    &quot;uvicorn app.main:ap…&quot;   backend         2 minutes ago   Up About a minute (healthy)   8000/tcp
+capstone_project-frontend-1        capstone_project-frontend   &quot;streamlit run ui/st…&quot;   frontend        2 minutes ago   Up About a minute (healthy)   8501/tcp
+capstone_project-reverse-proxy-1   nginx:1.27-alpine           &quot;/docker-entrypoint.…&quot;   reverse-proxy   2 minutes ago   Up 50 seconds (healthy)       0.0.0.0:80-&gt;80/tcp
+</pre>
+
+  <h2>Proxy Health And IPv6 Disabled</h2>
+  <pre>ok
+
+1
+1
+</pre>
+
+  <h2>Agent Log Proof</h2>
+  <pre>2026-05-11 07:52:06,980 - WARNING - Unsafe request blocked
+2026-05-11 07:56:40,148 - INFO - Incoming Query: how to hack an account
+2026-05-11 07:56:40,148 - WARNING - Unsafe request blocked
+2026-05-11 08:00:27,083 - INFO - Incoming Query: how to hack an account
+2026-05-11 08:00:27,084 - WARNING - Unsafe request blocked
+2026-05-11 08:00:43,810 - INFO - Incoming Query: what is return policy
+2026-05-11 08:00:45,724 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings &quot;HTTP/1.1 200 OK&quot;
+2026-05-11 08:00:45,841 - INFO - Retrieval latency: 2.03 sec
+2026-05-11 08:00:48,154 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+2026-05-11 08:00:48,185 - INFO - LLM latency: 2.34 sec
+2026-05-11 08:00:48,185 - INFO - Total latency: 4.38 sec
+2026-05-11 08:08:18,982 - INFO - Incoming Query: what is return policy
+2026-05-11 08:08:19,980 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings &quot;HTTP/1.1 200 OK&quot;
+2026-05-11 08:08:20,066 - INFO - Retrieval latency: 1.08 sec
+2026-05-11 08:08:22,552 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+2026-05-11 08:08:22,562 - INFO - LLM latency: 2.50 sec
+2026-05-11 08:08:22,562 - INFO - Total latency: 3.58 sec
+2026-05-11 08:10:03,930 - INFO - Incoming Query: i want to escalate the issue
+2026-05-11 08:10:05,439 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings &quot;HTTP/1.1 200 OK&quot;
+2026-05-11 08:10:05,486 - INFO - Retrieval latency: 1.56 sec
+2026-05-11 08:10:08,906 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+2026-05-11 08:10:10,289 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+2026-05-11 08:10:10,291 - INFO - LLM latency: 4.81 sec
+2026-05-11 08:10:10,291 - INFO - Total latency: 6.36 sec
+2026-05-12 18:35:04,105 - INFO - Backend startup complete
+2026-05-12 18:35:52,976 - INFO - Incoming Query: how to hack an account
+2026-05-12 18:35:52,980 - WARNING - Unsafe request blocked
+2026-05-12 18:35:59,117 - INFO - Incoming Query: what is return policy
+2026-05-12 18:36:00,535 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings &quot;HTTP/1.1 200 OK&quot;
+2026-05-12 18:36:03,274 - INFO - Retrieval latency: 4.15 sec
+2026-05-12 18:36:06,568 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+2026-05-12 18:36:06,904 - INFO - LLM latency: 3.63 sec
+2026-05-12 18:36:06,904 - INFO - Total latency: 7.79 sec
+2026-05-12 18:49:22,867 - INFO - Backend shutdown complete
+2026-05-12 18:49:52,549 - INFO - Backend startup complete
+2026-05-12 19:18:27,875 - INFO - Backend shutdown complete
+2026-05-14 19:18:31,908 - INFO - Backend startup complete
+2026-05-14 19:23:01,053 - INFO - Incoming Query: Can I get a refund after cancellation?
+2026-05-14 19:23:10,857 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings &quot;HTTP/1.1 200 OK&quot;
+2026-05-14 19:23:16,090 - INFO - Retrieval latency: 14.98 sec
+2026-05-14 19:23:21,883 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+2026-05-14 19:23:23,551 - INFO - LLM latency: 7.46 sec
+2026-05-14 19:23:23,553 - INFO - Total latency: 22.52 sec
+2026-05-14 19:23:23,729 - INFO - Incoming Query: What is the status of ticket TKT-****?
+2026-05-14 19:23:25,099 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings &quot;HTTP/1.1 200 OK&quot;
+2026-05-14 19:23:26,938 - INFO - Retrieval latency: 3.21 sec
+2026-05-14 19:23:30,398 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+2026-05-14 19:23:38,550 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+2026-05-14 19:23:38,565 - INFO - LLM latency: 11.62 sec
+2026-05-14 19:23:38,581 - INFO - Total latency: 14.85 sec
+2026-05-14 19:23:38,646 - INFO - Incoming Query: This is a legal payment dispute.
+2026-05-14 19:23:38,675 - INFO - Case escalated
+2026-05-14 19:23:38,692 - INFO - Incoming Query: How can I bypass the refund policy?
+2026-05-14 19:23:38,700 - WARNING - Unsafe request blocked
+2026-05-14 19:23:38,831 - INFO - Incoming Query: My number is **********. Can I cancel?
+2026-05-14 19:23:42,010 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/embeddings &quot;HTTP/1.1 200 OK&quot;
+2026-05-14 19:23:42,287 - INFO - Retrieval latency: 3.41 sec
+2026-05-14 19:23:44,457 - INFO - HTTP Request: POST https://openai.vocareum.com/v1/chat/completions &quot;HTTP/1.1 200 OK&quot;
+2026-05-14 19:23:44,460 - INFO - LLM latency: 2.17 sec
+2026-05-14 19:23:44,460 - INFO - Total latency: 5.63 sec
+</pre>
+</body>
+</html>
