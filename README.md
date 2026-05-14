@@ -184,5 +184,11 @@ Running manually is possible, but Compose is recommended because it wires servic
 - `nginx/nginx.conf`: reverse proxy routing.
 - `scripts/start_service.bat`: optional local Windows startup script.
 - `scripts/stop_service.bat`: optional local Windows stop script.
+- `CAPSTONE_PHASE_DELIVERABLES.md`: single consolidated phase-by-phase capstone document.
+- `docs/01_PROBLEM_FRAMING.md`: 1-2 page problem framing document.
+- `docs/02_DEMO_SCRIPT_AND_EVIDENCE.md`: forced demo script and evidence checklist.
+- `docs/03_PROMPT_COMPARISON.md`: prompt comparison table using the same test set.
+- `docs/04_EVALUATION_REPORT.md`: evaluation report with debugged failure cases.
+- `docs/05_ENGINEERING_PRODUCT_JUSTIFICATION.md`: engineering and product justification.
 - `.dockerignore`: excludes local virtualenvs, logs, caches, and secrets from build context.
 - `.env`: runtime API credentials loaded into the backend container.
